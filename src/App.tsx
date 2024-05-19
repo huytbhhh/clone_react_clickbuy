@@ -3,8 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import { Tranhuy } from './Tranhuy';
+import { Homepage } from './client/homepage';
+import { Phone_page } from './client/phone_page/phone_page';
 
 function App() {
 
@@ -12,7 +12,8 @@ function App() {
     <>
     <Router>
       <Routes>
-      <Route path = "/ok" element={<Tranhuy/>}/>
+      <Route path = "/" element={<Homepage/>}/>
+      <Route path = "/homepage" element={<Phone_page/>}/>
       </Routes>
     </Router>
     </>
