@@ -17,8 +17,6 @@ export const Phone_page = ()=> {
         <p>-</p>
 
         <h1 >_______________________em vào trang  https://clickbuy.com.vn/dien-thoai và code phần giữa của trang này nhé  </h1>
-
-
         <Footer/>
         </>
     )
