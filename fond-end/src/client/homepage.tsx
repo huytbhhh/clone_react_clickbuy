@@ -7,9 +7,10 @@ export const Homepage = () => {
     return (
         <>
             <Header />
-
-
+            
+            <div className={styles['backgroup']}></div>
             <div className={styles['banner']}>
+            
                 <div className={styles['banner-homepage']}>
                     {/* <div className={styles['']}></div> */}
 
@@ -17,17 +18,17 @@ export const Homepage = () => {
                         <ul>
                             <li className={styles['menu-category-list-li']}>
                                 <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/1-small.png" alt="" /> Điện thoại</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/1-small.png" alt="" /> Điện thoại</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/2.png" alt="" /> Điện thoại</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/3.png" alt="" /> Điện thoại</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/5.png" alt="" /> Điện thoại</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/6.png" alt="" /> Điện thoại</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/7.png" alt="" /> Điện thoại</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/8.png" alt="" /> Điện thoại</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/files/sac_pin-removebg-preview1.png" alt="" /> Điện thoại</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/icon/am-thanh.png" alt="" /> Điện thoại</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/icon/icon-sua-chua.png" alt="" /> Điện thoại</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/12.png" alt="" /> Điện thoại</a>
+                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/1-small.png" alt="" />iphone</a>
+                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/2.png" alt="" />Samsung</a>
+                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/3.png" alt="" />Tablet</a>
+                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/5.png" alt="" />Laptop</a>
+                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/6.png" alt="" />Đồng hồ</a>
+                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/7.png" alt="" />Hàng cũ</a>
+                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/8.png" alt="" />Thu cũ</a>
+                                <a href=""><img src="https://clickbuy.com.vn/uploads/files/sac_pin-removebg-preview1.png" alt="" /> Phụ kiện</a>
+                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/icon/am-thanh.png" alt="" />Âm thanh</a>
+                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/icon/icon-sua-chua.png" alt="" />Sửa chữa</a>
+                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/12.png" alt="" />Tin công nghệ</a>
                             </li>
                         </ul>
                     </div>

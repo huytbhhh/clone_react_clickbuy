@@ -2,6 +2,7 @@
     margin: auto;
     width: 1170px;
     font-family: Arial;
+    position: relative;
 
 }
 .banner-homepage{
@@ -11,6 +12,17 @@
     display: flex;
     margin-top: 20px;
 }
+.backgroup{
+    background: linear-gradient(115deg, #d00, #d00) #d00;
+    border-radius: 0 0 50% 50%;
+    content: "";
+    height: 125px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
 
 .menu-category-list{
     padding-left: 9px;
@@ -47,9 +59,11 @@
     height: 24px;
 }
 .slide{
+  
     width: 655px;
 }
 .slide img{
+    border-radius: 10px 10px 0px 0px;
     box-shadow: 0 1px 2px 0 rgba(60,64,67,.102), 0 2px 6px 2px rgba(60,64,67,.149);
 
     width: 655px;
@@ -197,7 +211,7 @@
 }
 .comment span{
     color: #d3ced2;
-    font-size: 11px;
+    
 }
 .product{
     
