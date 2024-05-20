@@ -81,6 +81,8 @@
     width: 1200px;
     /* background-color: #ff5050; */
     margin-top: 150px;
+    margin-bottom: 30px;
+    
 
 }
 .row1_footer{
@@ -109,5 +111,14 @@ svg{
 }
 .region-menu{
     display: flex;
+}
+.phone-number{
+    font-size: 14px;
+    color: #212529;
+    list-style: none;
+}
+.footer-top__text a{
+    text-decoration: none;
+
 }
 

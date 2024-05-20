@@ -21,31 +21,35 @@ export const Footer = () => {
             <span >(Từ 8:00-21:00)</span>
         </div>
         
-        <p className="footer-top__text">
+        <p className={styles['footer-top__text']}>
             <span>Hotline bán hàng:</span>
             <a aria-label="Hotline bán hàng:" title="Hotline bán hàng:" href="tel:0966.06.2468">
-                <b className="phone-number">0966.06.2468</b><b> </b>
+                <br />
+                <b className={styles['phone-number']}>0966.06.2468</b><b> </b>
             </a>
         </p>
         
-        <p className="footer-top__text">
+        <p className={styles['footer-top__text']}>
             <span>Hotline bảo hành, kỹ thuật:</span>
             <a aria-label="Hotline bảo hành, kỹ thuật:" title="Hotline bảo hành, kỹ thuật:" href="tel:0246.683.9292">
-                <b className="phone-number">0246.683.9292</b><b> </b>
+            <br />
+                <b className={styles['phone-number']}>0246.683.9292</b><b> </b>
             </a>
         </p>
         
-        <p className="footer-top__text">
+        <p className={styles['footer-top__text']}>
             <span>Hotline hỗ trợ phần mềm:</span>
             <a aria-label="Hotline hỗ trợ phần mềm:" title="Hotline hỗ trợ phần mềm:" href="tel:0962.824.422">
-                <b className="phone-number">0962.824.422</b><b> </b>
+            <br />
+                <b className={styles['phone-number']}>0962.824.422</b><b> </b>
             </a>
         </p>
         
-        <p className="footer-top__text">
+        <p className={styles['footer-top__text']}>
             <span>Hotline phản ánh chất lượng dịch vụ:</span>
             <a aria-label="Hotline phản ánh chất lượng dịch vụ:" title="Hotline phản ánh chất lượng dịch vụ:" href="tel:1900.633.471">
-                <b className="phone-number">1900.633.471</b><b> </b>
+            <br />
+                <b className={styles['phone-number']}>1900.633.471</b><b> </b>
             </a>
         </p>
         
@@ -81,7 +85,7 @@ export const Footer = () => {
                             <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path>
                         </svg>
                         <span className="store-list__name">367 Cầu Giấy, Hà Nội:</span>: <a href="tel:0911542468" title="Hotline" aria-label="Hotline">
-                            <b className="phone-number">0911542468 </b>
+                            <b className={styles['phone-number']}>0911542468 </b>
                         </a>- <strong>Bản đồ đường đi</strong>
                     </li>
                     
@@ -90,7 +94,7 @@ export const Footer = () => {
                             <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path>
                         </svg>
                         <span className="store-list__name">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội:</span>: <a href="tel:0976732468" title="Hotline" aria-label="Hotline">
-                            <b className="phone-number">0976732468 </b>
+                            <b className={styles['phone-number']}>0976732468 </b>
                         </a>- <strong>Bản đồ đường đi</strong>
                     </li>
                     
@@ -99,7 +103,7 @@ export const Footer = () => {
                             <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path>
                         </svg>
                         <span className="store-list__name">118 Thái hà, Đống Đa, Hà Nội:</span>: <a href="tel:0964242468" title="Hotline" aria-label="Hotline">
-                            <b className="phone-number">0964242468 </b>
+                            <b className={styles['phone-number']}>0964242468 </b>
                         </a>- <strong>Bản đồ đường đi</strong>
                     </li>
                     
@@ -108,7 +112,7 @@ export const Footer = () => {
                             <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path>
                         </svg>
                         <span className="store-list__name">446 Xã Đàn, Đống Đa, Hà Nội:</span>: <a href="tel:0961112468" title="Hotline" aria-label="Hotline">
-                            <b className="phone-number">0961112468 </b>
+                            <b className={styles['phone-number']}>0961112468 </b>
                         </a>- <strong>Bản đồ đường đi</strong>
                     </li>
                     
@@ -117,7 +121,7 @@ export const Footer = () => {
                             <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path>
                         </svg>
                         <span className="store-list__name">312 Nguyễn Trãi, P.Trung Văn, Q.Nam Từ Liêm, Hà Nội (gần Đại Học Hà Nội)</span>: <a href="tel:0946982468" title="Hotline" aria-label="Hotline">
-                            <b className="phone-number">0946982468 </b>
+                            <b className={styles['phone-number']}>0946982468 </b>
                         </a>- <strong>Bản đồ đường đi</strong>
                     </li>
                     
