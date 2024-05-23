@@ -5,6 +5,8 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Homepage } from './client/homepage';
 import { Phone_page } from './client/phone_page/phone_page';
+import { Hocit } from './client/demo/Hocit';
+import { Admin } from './admin/admin';
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
       <Routes>
       <Route path = "/" element={<Homepage/>}/>
       <Route path = "/homepage" element={<Phone_page/>}/>
+      <Route path = "/hocit" element={<Hocit/>}/>
+      <Route path = "/admin" element={<Admin/>}/>
       </Routes>
     </Router>
     </>
