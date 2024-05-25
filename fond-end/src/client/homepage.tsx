@@ -2,9 +2,27 @@ import { Footer } from "../component/Footer"
 import { Header } from "../component/Header"
 import styles from './styles.module.css';
 import start from './../assets/star.png';
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
+
+
 
 
 export const Homepage = () => {
+    const [product, setProduct] = useState<any[]>([]);
+
+    useEffect(() => {
+        const fetchApi = async () => {
+            const response = await axios.get<any[]>("http://localhost:5000/api/products")
+            setProduct(response.data)
+        }
+        fetchApi()
+
+    }, []);
+
+    console.log("true", product.filter(product => product.category === "new" && product.type === "Samsung"))
+
+
     return (
         <>
             <Header />
@@ -77,248 +95,37 @@ export const Homepage = () => {
                 </div>
 
                 <div className={styles['product']}>
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
+                    {product.filter(product => product.category === "new" && product.current === "phone").slice(0, 5).map((items) => {
+                        return (
+                            <div className={styles['items_product']}
+                                key={items.id}>
+                                <a href="">
+                                    <div className={styles["img-items_product"]}>
+                                        <img src={items.img} alt="" />
                                     </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
+                                    <div className={styles['items-product-text']}>
+                                        <p>{items.name}</p>
+                                        <span className={styles['price-product']}>{items.price} đ</span>
+                                        <div className={styles['start-comment']}>
+                                            <div className={styles['start']}>
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                            </div>
+                                            <div className={styles['comment']}>
+                                                <span>(234 đánh giá)</span>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                </div>
 
+
+                                </a>
                             </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
+                        )
+                    })}
 
                 </div>
                 {/* bên trên là ĐIỆN THOẠI */}
@@ -335,148 +142,39 @@ export const Homepage = () => {
                         </div>
                     </div>
                 </div>
-
                 <div className={styles['product']}>
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
+                    {product.filter(product => product.category === "old" && product.current === "phone").slice(0, 5).map((items) => {
+                        return (
+                            <div className={styles['items_product']}>
+                                <a href="">
+                                    <div className={styles["img-items_product"]}>
+                                        <img src={items.img} alt="" />
                                     </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
+                                    <div className={styles['items-product-text']}>
+                                        <p>{items.name}</p>
+                                        <span className={styles['price-product']}>{items.price}</span>
+                                        <div className={styles['start-comment']}>
+                                            <div className={styles['start']}>
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                            </div>
+                                            <div className={styles['comment']}>
+                                                <span>(234 đánh giá)</span>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                </div>
 
+
+                                </a>
                             </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-
-
-
-
+                        )
+                    })}
                 </div>
+
                 {/* Trên là HÀNG CŨ */}
 
 
@@ -494,147 +192,45 @@ export const Homepage = () => {
                 </div>
 
                 <div className={styles['product']}>
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
+                    {product.filter(product => product.category === "new" && product.type === "iPhone" && product.current === "phone").slice(0, 5).map((items) => {
+                        return (
+                            <div className={styles['items_product']}>
+                                <a href="">
+                                    <div className={styles["img-items_product"]}>
+                                        <img src={items.img} alt="" />
                                     </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
+                                    <div className={styles['items-product-text']}>
+                                        <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
+                                        <span className={styles['price-product']}>28.690.000 ₫</span>
+                                        <div className={styles['start-comment']}>
+                                            <div className={styles['start']}>
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                            </div>
+                                            <div className={styles['comment']}>
+                                                <span>(234 đánh giá)</span>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                </div>
 
+
+                                </a>
                             </div>
+                        )
+                    })}
 
 
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
 
 
 
 
 
                 </div>
-                {/* Trên làm SAMSUNG */}
+                {/* Trên làm IPHONE */}
 
                 <div className={styles['list-product-homepage']}>
                     <div className={styles['fillter-phone']}>
@@ -650,149 +246,178 @@ export const Homepage = () => {
                 </div>
 
                 <div className={styles['product']}>
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
+                    {product.filter(product => product.category === "new" && product.type === "Samsung").slice(0, 5).map((items) => {
+                        return (
+                            <div className={styles['items_product']}>
+                                <a href="">
+                                    <div className={styles["img-items_product"]}>
+                                        <img src={items.img} alt="" />
                                     </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
+                                    <div className={styles['items-product-text']}>
+                                        <p>{items.name}</p>
+                                        <span className={styles['price-product']}>{items.price} ₫</span>
+                                        <div className={styles['start-comment']}>
+                                            <div className={styles['start']}>
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                            </div>
+                                            <div className={styles['comment']}>
+                                                <span>(234 đánh giá)</span>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                </div>
 
+
+                                </a>
                             </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-                    <div className={styles['items_product']}>
-                        <a href="">
-                            <div className={styles["img-items_product"]}>
-                                <img src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                            </div>
-                            <div className={styles['items-product-text']}>
-                                <p>iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước</p>
-                                <span className={styles['price-product']}>28.690.000 ₫</span>
-                                <div className={styles['start-comment']}>
-                                    <div className={styles['start']}>
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                        <img src={start} alt="" />
-                                    </div>
-                                    <div className={styles['comment']}>
-                                        <span>(234 đánh giá)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </a>
-                    </div>
-
-
-
-
+                        )
+                    })}
 
                 </div>
+                {/* Trên làm SAMSUNG */}
+
+                <div className={styles['list-product-homepage']}>
+                    <div className={styles['fillter-phone']}>
+                        <h1>MÁY TÍNH BẢNG</h1>
+                        <div className={styles['fillter-phone-category']}>
+                            <span>iPad</span>
+                            <span>Samsung Tab</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className={styles['product']}>
+                    {product.filter(product => product.current === "table" && product.type === "apple").slice(0, 5).map((items) => {
+                        return (
+                            <div className={styles['items_product']}>
+                                <a href="">
+                                    <div className={styles["img-items_product"]}>
+                                        <img src={items.img} alt="" />
+                                    </div>
+                                    <div className={styles['items-product-text']}>
+                                        <p>{items.name}</p>
+                                        <span className={styles['price-product']}>{items.price} ₫</span>
+                                        <div className={styles['start-comment']}>
+                                            <div className={styles['start']}>
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                            </div>
+                                            <div className={styles['comment']}>
+                                                <span>(234 đánh giá)</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
 
 
+                                </a>
+                            </div>
+                        )
+                    })}
 
+                </div>
+                {/* Trên làm SAMSUNG */}
+                
+                <div className={styles['list-product-homepage']}>
+                    <div className={styles['fillter-phone']}>
+                        <h1>MÁY TÍNH BẢNG</h1>
+                        <div className={styles['fillter-phone-category']}>
+                            <span>Apple Watch Series 8</span>
+                            <span>Apple Watch Series 9</span>
+                            <span>Apple Watch Ultra 2</span>
+                            <span>Apple Watch SE 2023</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className={styles['product']}>
+                    {product.filter(product => product.current === "clock" && product.type === "apple").slice(0, 5).map((items) => {
+                        return (
+                            <div className={styles['items_product']}>
+                                <a href="">
+                                    <div className={styles["img-items_product"]}>
+                                        <img src={items.img} alt="" />
+                                    </div>
+                                    <div className={styles['items-product-text']}>
+                                        <p>{items.name}</p>
+                                        <span className={styles['price-product']}>{items.price} ₫</span>
+                                        <div className={styles['start-comment']}>
+                                            <div className={styles['start']}>
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                            </div>
+                                            <div className={styles['comment']}>
+                                                <span>(234 đánh giá)</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </a>
+                            </div>
+                        )
+                    })}
+
+                </div>
+                {/* Trên làm APPLE WATCH */}
+
+                <div className={styles['list-product-homepage']}>
+                    <div className={styles['fillter-phone']}>
+                        <h1>PHỤ KIỆN</h1>
+                        <div className={styles['fillter-phone-category']}>
+                            <span>Ốp lưng, bao da</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className={styles['product']}>
+                    {product.filter(product => product.current === "accessory" ).slice(0, 5).map((items) => {
+                        return (
+                            <div className={styles['items_product']}>
+                                <a href="">
+                                    <div className={styles["img-items_product"]}>
+                                        <img src={items.img} alt="" />
+                                    </div>
+                                    <div className={styles['items-product-text']}>
+                                        <p>{items.name}</p>
+                                        <span className={styles['price-product']}>{items.price} ₫</span>
+                                        <div className={styles['start-comment']}>
+                                            <div className={styles['start']}>
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                                <img src={start} alt="" />
+                                            </div>
+                                            <div className={styles['comment']}>
+                                                <span>(234 đánh giá)</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </a>
+                            </div>
+                        )
+                    })}
+
+                </div>
+                {/* Trên làm PHỤ KIỆN */}
 
 
 
@@ -806,7 +431,7 @@ export const Homepage = () => {
 
 
 
-  
+
             <Footer />
         </>
     )

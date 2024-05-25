@@ -1,0 +1,68 @@
+.left-admin {
+    padding: 25px 0px 0px 29px;
+    background-color: rgb(34 42 69 / 96%);
+    width: 260px;
+    height: 100vh;
+
+}
+.logo img{
+    width: 40px;
+    height: 40px;
+}
+.logo {
+    margin-bottom: 20px;
+    align-items: center;
+    font-size: 18px;
+    gap: 10px;
+    display: flex;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.dashboard img {
+    width: 27px;
+    height: 27px;
+}
+
+.dashboard-div {
+    align-items: center;
+    display: flex;
+    gap: 25px;
+
+}
+
+
+.dashboard span {
+    padding-top: 3px;
+    color: #FFFFFF;
+}
+
+.dashboard {
+    line-height: 30px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-fake {
+    line-height: 20px;
+    padding: 20px 0px 0px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard a{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ccc;
+    padding: 25px 0px 15px 0px;
+}
+.component{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.admin{
+    display: flex;
+}

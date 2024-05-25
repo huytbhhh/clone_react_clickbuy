@@ -1,17 +1,13 @@
+import { AdminLeft } from "./component/AdminLeft"
+import styles from "./admin.module.css"
+import { Outlet } from "react-router-dom"
 export const Admin = () => {
     return(
         <>
-            <div className="container">
-                <div className="left-admin">
-                    <div className="dashboard">
-                        <span>Dashboard</span>
-                        <span>plo;Dashboard</span>
-                        <span>Dashboard</span>
-                        <span>Dashboard</span>
-                    </div>
-                </div>
-            </div>
-
+        <div className={styles["admin"]}>
+            <AdminLeft/>
+            <Outlet/>
+        </div>
         </>
     )
 }
