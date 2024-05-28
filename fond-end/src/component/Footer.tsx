@@ -3,7 +3,7 @@ import styles from '../component/styles.module.css';
 export const Footer = () => {
     return(
         <>
-        <div className={styles['footer']} >
+        <div style={{borderTop:"1px solid rgb(132, 146, 146)"}} className={styles['footer']} >
             <div className={styles['row1_footer']}>
                 <b>Chính sách bán hàng</b> <br />
                 <a href="">Chính sách bảo hành</a><br />
