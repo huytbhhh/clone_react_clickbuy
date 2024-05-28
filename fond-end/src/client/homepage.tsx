@@ -28,7 +28,7 @@ export const Homepage = () => {
             <Header />
 
             <div className={styles['backgroup']}></div>
-            <div className={styles['banner']}>
+            <div style={{paddingTop:"50px"}}  className={styles['banner']}>
 
                 <div className={styles['banner-homepage']}>
                     {/* <div className={styles['']}></div> */}
@@ -37,17 +37,17 @@ export const Homepage = () => {
                         <ul>
                             <li className={styles['menu-category-list-li']}>
                                 <a href="http://localhost:5173/homepage"><img src="https://clickbuy.com.vn/uploads/images/2023/09/1-small.png" alt="" /> Điện thoại</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/1-small.png" alt="" />iphone</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/2.png" alt="" />Samsung</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/3.png" alt="" />Tablet</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/5.png" alt="" />Laptop</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/6.png" alt="" />Đồng hồ</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/7.png" alt="" />Hàng cũ</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/8.png" alt="" />Thu cũ</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/files/sac_pin-removebg-preview1.png" alt="" /> Phụ kiện</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/icon/am-thanh.png" alt="" />Âm thanh</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/icon/icon-sua-chua.png" alt="" />Sửa chữa</a>
-                                <a href=""><img src="https://clickbuy.com.vn/uploads/images/2023/09/12.png" alt="" />Tin công nghệ</a>
+                                <a href="http://localhost:5173/iphone"><img src="https://clickbuy.com.vn/uploads/images/2023/09/1-small.png" alt="" />iphone</a>
+                                <a href="http://localhost:5173/samsung"><img src="https://clickbuy.com.vn/uploads/images/2023/09/2.png" alt="" />Samsung</a>
+                                <a href="http://localhost:5173/table"><img src="https://clickbuy.com.vn/uploads/images/2023/09/3.png" alt="" />Tablet</a>
+                                <a href="http://localhost:5173/laptop"><img src="https://clickbuy.com.vn/uploads/images/2023/09/5.png" alt="" />Laptop</a>
+                                <a href="http://localhost:5173/dongho"><img src="https://clickbuy.com.vn/uploads/images/2023/09/6.png" alt="" />Đồng hồ</a>
+                                <a href="http://localhost:5173/hangcu"><img src="https://clickbuy.com.vn/uploads/images/2023/09/7.png" alt="" />Hàng cũ</a>
+                                <a href="http://localhost:5173/thucu"><img src="https://clickbuy.com.vn/uploads/images/2023/09/8.png" alt="" />Thu cũ</a>
+                                <a href="http://localhost:5173/phukien"><img src="https://clickbuy.com.vn/uploads/files/sac_pin-removebg-preview1.png" alt="" /> Phụ kiện</a>
+                                <a href="http://localhost:5173/amthanh"><img src="https://clickbuy.com.vn/uploads/images/icon/am-thanh.png" alt="" />Âm thanh</a>
+                                <a href="http://localhost:5173/suachua"><img src="https://clickbuy.com.vn/uploads/images/icon/icon-sua-chua.png" alt="" />Sửa chữa</a>
+                                <a href="http://localhost:5173/tincongnghe"><img src="https://clickbuy.com.vn/uploads/images/2023/09/12.png" alt="" />Tin công nghệ</a>
                             </li>
                         </ul>
                     </div>
@@ -95,7 +95,7 @@ export const Homepage = () => {
                 </div>
 
                 <div className={styles['product']}>
-                    {product.filter(product => product.category === "new" && product.current === "phone").slice(0, 5).map((items) => {
+                    {product.filter(product => product.category === "new" && product.current === "phone").slice(0, 6).map((items) => {
                         return (
                             <div className={styles['items_product']}
                                 key={items.id}>
@@ -292,7 +292,7 @@ export const Homepage = () => {
                 </div>
 
                 <div className={styles['product']}>
-                    {product.filter(product => product.current === "table" && product.type === "apple").slice(0, 5).map((items) => {
+                    {product.filter(product => product.current === "table").slice(0, 5).map((items) => {
                         return (
                             <div className={styles['items_product']}>
                                 <a href="">
@@ -328,7 +328,7 @@ export const Homepage = () => {
                 
                 <div className={styles['list-product-homepage']}>
                     <div className={styles['fillter-phone']}>
-                        <h1>MÁY TÍNH BẢNG</h1>
+                        <h1>ĐỒNG HỒ</h1>
                         <div className={styles['fillter-phone-category']}>
                             <span>Apple Watch Series 8</span>
                             <span>Apple Watch Series 9</span>
@@ -340,7 +340,7 @@ export const Homepage = () => {
                 </div>
 
                 <div className={styles['product']}>
-                    {product.filter(product => product.current === "clock" && product.type === "apple").slice(0, 5).map((items) => {
+                    {product.filter(product => product.current === "dongho").slice(0, 5).map((items) => {
                         return (
                             <div className={styles['items_product']}>
                                 <a href="">
@@ -385,7 +385,7 @@ export const Homepage = () => {
                 </div>
 
                 <div className={styles['product']}>
-                    {product.filter(product => product.current === "accessory" ).slice(0, 5).map((items) => {
+                    {product.filter(product => product.current === "phukien" ).slice(0, 5).map((items) => {
                         return (
                             <div className={styles['items_product']}>
                                 <a href="">

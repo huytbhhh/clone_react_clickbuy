@@ -28,6 +28,8 @@ app.use(cors());
 
 // Định nghĩa schema và model cho products
 const productSchema = new mongoose.Schema({
+    battery: String,
+    capacity: String,
     current: String,
     name: String,
     type: String,
@@ -53,11 +55,13 @@ app.get('/api/products', async (req, res) => {
 
 // Route để thêm một product mới
 app.post('/api/products', async (req, res) => {
-    const { current, name, type, price, img, category, color, infor, description } = req.body;
+    const { current, name, type, price, img, category, color, infor, description,capacity,battery, } = req.body;
     
     // Create a new product
     const newProduct = new Product({
+        battery,
         current,
+        capacity,
         name,
         type,
         price,

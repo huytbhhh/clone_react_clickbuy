@@ -94,7 +94,9 @@ export const ListProduct_Admin = () => {
 
 
                         </Scrollbars>
-                        {text ? <div className={styles["fromAdd"]}>
+                        {text ? 
+                        <form action="" method="post">
+                        <div className={styles["fromAdd"]}>
                             <div className={styles["header-form"]}>
                                 <img src="https://cdn-icons-png.flaticon.com/128/5129/5129694.png" alt="" />
                                 <h1>Form Update Product</h1>
@@ -130,7 +132,9 @@ export const ListProduct_Admin = () => {
                             <input type="text" name="" id="" placeholder="price..." />
                             <input type="text" name="" id="" placeholder="color..." />
                             <button className="">Save</button>
-                        </div> : ""}
+                        </div>
+                        </form>
+                         : ""}
 
                     </div>
 
