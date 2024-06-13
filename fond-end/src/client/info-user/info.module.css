@@ -1,0 +1,28 @@
+.header_hethong img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+}
+.header_hethong{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.left-user{
+    width: 20%;
+    border-right: 1px solid black;
+
+}
+
+.container {
+    margin: auto;
+    margin-top: 80px;
+    width: 80%;
+    border: 1px solid black;
+    padding: 25px;
+}
+.banner-left{
+    display: flex;
+    flex-direction: column;
+}

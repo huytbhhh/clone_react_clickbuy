@@ -22,6 +22,9 @@ import { Sigup } from './client/sigin_sigup/sigup';
 import { Detail } from './client/detail/Detail';
 import { Cart } from './client/cart/cart';
 import { UseEffect } from './demo/UseEffect';
+
+
+import { Info_user } from './client/info-user/Info_user';
 import { Timer } from './demo/Timer';
 
 function App() {
@@ -47,6 +50,7 @@ function App() {
       <Route path='detail' element={<Detail/>}/>
       <Route path = "useEffect" element={<UseEffect/>}/>
       <Route path = "timer" element={<Timer/>}/>
+      <Route path = "user" element={<Info_user/>}/>
 
       
       <Route path = "cart" element={<Cart/>}/>

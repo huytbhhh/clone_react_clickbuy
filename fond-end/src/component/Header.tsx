@@ -39,11 +39,13 @@ export const Header = () => {
             <img src="https://cdn-icons-png.flaticon.com/128/4120/4120467.png" alt="" />
             <span>Hệ thống <br /> Của hàng</span>
         </div>
+        <Link to={"user"}>
         <div style={{alignItems:"center"}} className={styles['header_hethong']}>
             <span style={{fontSize:"15px"}}>Trần Bá Huy</span>
             <img style={{width:"45px",height:"45px"}} src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="" />
 
         </div>
+        </Link>
 
 
         </div>
