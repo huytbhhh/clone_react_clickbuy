@@ -1,0 +1,94 @@
+.container{
+margin-top: 80px;
+font-size: 17px;
+}
+.container img {
+    width: 50px;
+    height: 50px;
+}
+.logo{
+    border-radius: 20px;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 25%;
+    height: 70px;
+    background-color: brown;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+.banner{
+    margin: auto;
+    width: 75%;
+
+}
+.banner-cart{
+    align-items: center;
+    text-align: center;
+    padding: 20px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    border-bottom: 1px solid rgba(0, 0, 0, .19);
+}
+.products{
+
+    display: flex;
+    flex-direction: column;
+}
+.products img{
+    margin: auto;
+}
+.couter{
+    border: 1px solid rgba(0, 0, 0, .19);
+    align-items: center;
+    padding:7px 5px 5px 5px;
+}
+.quantity{
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    border: 1px solid rgba(0, 0, 0, .19);
+    margin: auto;
+}
+.deletebt{
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    margin: auto;
+    border: 1px solid black;
+    color: #FFD700;
+    font-weight: 700;
+    background-color: #B22222;
+}
+.by{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 75px;
+    background-color: #FFFFFF ;
+    border-top: 1px solid rgba(0, 0, 0, .19);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 100px;
+    display: flex;
+    padding: 30px 170px;
+    font-size: 23px;
+    justify-content: space-between;
+    display: flex;
+
+}
+.by-bt{
+    
+    align-items: center;
+    gap: 20px;
+    display: flex;
+}
+.by-bt button{
+    border-radius: 3px;
+    padding: 13px 36px;
+    background-color: #ee4d2d;
+    border: 1px solid #ee4d2d;
+}

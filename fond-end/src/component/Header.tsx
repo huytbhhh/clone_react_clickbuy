@@ -23,11 +23,12 @@ export const Header = () => {
                     <span>0966.062.468</span>
                 </div>
         </div>
-
+        <Link to={'/cart'}>
         <div className={styles['header_chitiet']}>
             <img src="https://cdn-icons-png.flaticon.com/128/3737/3737173.png" alt="" />
             <span>Chi tiết <br /> giỏ hàng</span>
         </div>
+        </Link>
 
         <div className={styles['header_baohanh']}>
             <img src="https://cdn-icons-png.flaticon.com/128/3734/3734879.png" alt="" />
