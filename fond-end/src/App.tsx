@@ -5,7 +5,6 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Homepage } from './client/homepage';
 import { Phone_page } from './client/phone_page/phone_page';
-import { Hocit } from './client/demo/Hocit';
 import { Admin } from './admin/admin';
 import { ListProduct_Admin } from './admin/component/ListProduct_Admin';
 import { NewProduct } from './admin/component/NewProduct';
@@ -21,6 +20,9 @@ import { Suachua } from './client/menu_category/Suachua';
 import { Sigin } from './client/sigin_sigup/Sigin';
 import { Sigup } from './client/sigin_sigup/sigup';
 import { Detail } from './client/detail/Detail';
+import { Cart } from './client/cart/cart';
+import { UseEffect } from './demo/UseEffect';
+import { Timer } from './demo/Timer';
 
 function App() {
 
@@ -32,7 +34,7 @@ function App() {
       <Route path = "/" element={<Homepage/>}/>
       <Route path = "/homepage" element={<Phone_page/>}/>
       <Route path = "/iphone" element={<Iphone/>}/>
-      <Route path = "/samsung" element={<Samsung/>}/>
+      <Route path = "samsung" element={<Samsung/>}/>
       <Route path="/table" element={<Table/>}/>
       <Route path="laptop" element={<Laptop/>}/>
       <Route path="dongho" element={<Dongho/>}/>
@@ -43,7 +45,13 @@ function App() {
       <Route path="sigin" element={<Sigin/>}/>
       <Route path='sigup' element={<Sigup/>}/>
       <Route path='detail' element={<Detail/>}/>
-      <Route path = "/hocit" element={<Hocit/>}/>
+      <Route path = "useEffect" element={<UseEffect/>}/>
+      <Route path = "timer" element={<Timer/>}/>
+
+      
+      <Route path = "cart" element={<Cart/>}/>
+
+
 
 
 
