@@ -26,6 +26,7 @@ import { UseEffect } from './demo/UseEffect';
 
 import { Info_user } from './client/info-user/Info_user';
 import { Timer } from './demo/Timer';
+import { Hocit } from './demo/admin';
 
 function App() {
 
@@ -48,8 +49,7 @@ function App() {
       <Route path="sigin" element={<Sigin/>}/>
       <Route path='sigup' element={<Sigup/>}/>
       <Route path='detail' element={<Detail/>}/>
-      <Route path = "useEffect" element={<UseEffect/>}/>
-      <Route path = "timer" element={<Timer/>}/>
+      <Route path = "hocit" element={<Hocit/>}/>
       <Route path = "user" element={<Info_user/>}/>
 
       
