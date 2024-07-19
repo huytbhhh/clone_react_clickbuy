@@ -48,7 +48,7 @@ function App() {
       <Route path="suachua" element={<Suachua/>}/>
       <Route path="sigin" element={<Sigin/>}/>
       <Route path='sigup' element={<Sigup/>}/>
-      <Route path='detail' element={<Detail/>}/>
+      <Route path='detail/:id' element={<Detail/>}/>
       <Route path = "hocit" element={<Hocit/>}/>
       <Route path = "user" element={<Info_user/>}/>
 

@@ -24,9 +24,13 @@ export const Header = () => {
                 </div>
         </div>
         <Link to={'/cart'}>
-        <div className={styles['header_chitiet']}>
+        <div style={{position:"relative"}} className={styles['header_chitiet']}>
+            <div style={{display:'flex'}}>
             <img src="https://cdn-icons-png.flaticon.com/128/3737/3737173.png" alt="" />
             <span>Chi tiết <br /> giỏ hàng</span>
+            </div>
+            <span style={{position:'absolute',bottom:'0',background:"rgb(255, 255, 0)",width:'auto',padding:'2px 5px',borderRadius:'10px'}}>1</span>
+
         </div>
         </Link>
 
@@ -39,7 +43,7 @@ export const Header = () => {
             <img src="https://cdn-icons-png.flaticon.com/128/4120/4120467.png" alt="" />
             <span>Hệ thống <br /> Của hàng</span>
         </div>
-        <Link to={"user"}>
+        <Link to={"/user"}>
         <div style={{alignItems:"center"}} className={styles['header_hethong']}>
             <span style={{fontSize:"15px"}}>Trần Bá Huy</span>
             <img style={{width:"45px",height:"45px"}} src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="" />

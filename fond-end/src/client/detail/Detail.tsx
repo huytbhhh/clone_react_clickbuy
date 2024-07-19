@@ -1,34 +1,40 @@
 import { Footer } from "../../component/Footer"
 import { Header } from "../../component/Header"
+import { useHook_Detail } from "../../hook/useHook_Detail"
 import styles from "./detail.module.css"
 export const Detail = () => {
+        const {productDetail} = useHook_Detail()
+        console.log("productDetail",productDetail)
+
+
+
     return (
         <>
             <Header />
             <div style={{ paddingTop: "90px" }} className={styles["container"]}>
-                <h1 style={{ fontSize: "23px" }}>Apple Watch Ultra 2 LTE 49mm Vỏ Titan dây Ocean Chính hãng VN/A</h1>
+                <h1 style={{ fontSize: "23px" }}>{productDetail?.name}</h1>
                 <div className={styles["detail-top"]}>
                     <div className={styles["detail-top-left"]}>
                         <div className={styles["img-banner"]}>
-                            <img src="https://clickbuy.com.vn//uploads/images/2023/10/avt-apple-watch-ultra-2-1.png" alt="" />
+                            <img src={productDetail?.img} alt="" />
                         </div>
                         <div className={styles["four-img"]}>
                             <img style={{ width: "63px", height: "63px", padding: "10px" }} src="https://cdn-icons-png.flaticon.com/128/3460/3460797.png" alt="" />
-                            <img style={{ width: "63px", height: "63px" }} src="https://clickbuy.com.vn//uploads/images/2023/10/avt-apple-watch-ultra-2.png" alt="" />
-                            <img style={{ width: "63px", height: "63px" }} src="https://clickbuy.com.vn//uploads/images/2023/10/avt-apple-watch-ultra-2-8.png" alt="" />
-                            <img style={{ width: "63px", height: "63px" }} src="https://clickbuy.com.vn//uploads/images/2023/10/avt-apple-watch-ultra-2-1.png" alt="" />
+                            <img style={{ width: "63px", height: "63px" }} src={productDetail?.img} alt="" />
+                            <img style={{ width: "63px", height: "63px" }} src={productDetail?.img} alt="" />
+                            <img style={{ width: "63px", height: "63px" }} src={productDetail?.img}  alt="" />
                         </div>
                         <img style={{ borderRadius: "10px", width: "468px" }} src="https://clickbuy.com.vn/uploads/media/623-lFyBB.png" alt="" />
                         <div className={styles["infor"]}>
                             <span style={{ fontSize: "15px" }}>Thông tin sản phẩm</span>
-                            <p>iPhone 15 Pro Max 256GB VN/A Máy mới 100%, nguyên seal hộp Apple Việt Nam. Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Type C - Type C</p>
+                            <p>{productDetail?.infor}</p>
                         </div>
                     </div>
                     <div className={styles["detail-top-between"]}>
                         <div className={styles["price"]}>
                             <div className={styles["price-1"]}>
                                 <b><s style={{ fontSize: "12px" }}>36,990,000đ</s></b>
-                                <span style={{ color: "#d00", fontSize: "26px", fontWeight: "700" }}>28.290.000 đ</span>
+                                <span style={{ color: "#d00", fontSize: "26px", fontWeight: "700" }}>{productDetail?.price} </span>
                             </div>
                             <span style={{ padding: "5px 10px", background: "#f8b500", fontSize: "12px", borderRadius: "5px" }}>Trả góp 0%</span>
                             <span style={{ fontSize: "13px" }}>Trả góp chỉ từ <b>0đ</b></span>
@@ -37,17 +43,10 @@ export const Detail = () => {
                             <b>Phiên bản khác</b>
                             <div className={styles["version-color"]}>
                                 <a className={styles["select-version"]} href="">
-                                    <b>256GB</b>
+                                    <b>{productDetail?.capacity}</b>
                                     <span>28.500.000 đ</span>
                                 </a>
-                                <a className={styles["select-version"]} href="">
-                                    <b>256GB</b>
-                                    <span>28.500.000 đ</span>
-                                </a>
-                                <a className={styles["select-version"]} href="">
-                                    <b>256GB</b>
-                                    <span>28.500.000 đ</span>
-                                </a>
+
                             </div>
                         </div>
                         <div className={styles["version"]}>
@@ -57,29 +56,7 @@ export const Detail = () => {
                                     <img style={{ width: "30px", height: "30px" }} src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
 
                                     <div style={{ display: "flex", flexDirection: "column" }} className={styles["info-color"]}>
-                                        <b>256GB</b>
-                                        <span>28.500.000 đ</span>
-                                    </div>
-                                </a>
-                                <a className={styles["select-version-no"]} href="">
-                                    <img style={{ width: "30px", height: "30px" }} src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-
-                                    <div style={{ display: "flex", flexDirection: "column" }} className={styles["info-color"]}>
-                                        <b>256GB</b>
-                                        <span>28.500.000 đ</span>
-                                    </div>
-                                </a>
-                                <a className={styles["select-version-no"]} href="">
-                                    <img style={{ width: "30px", height: "30px" }} src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                                    <div style={{ display: "flex", flexDirection: "column" }} className={styles["info-color"]}>
-                                        <b>256GB</b>
-                                        <span>28.500.000 đ</span>
-                                    </div>
-                                </a>
-                                <a className={styles["select-version-no"]} href="">
-                                    <img style={{ width: "30px", height: "30px" }} src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
-                                    <div style={{ display: "flex", flexDirection: "column" }} className={styles["info-color"]}>
-                                        <b>256GB</b>
+                                        <b>{productDetail?.color} </b>
                                         <span>28.500.000 đ</span>
                                     </div>
                                 </a>
@@ -179,13 +156,13 @@ export const Detail = () => {
                     <div style={{ color: "#212529" }} className={styles["parameter-left"]}>
                         <h1 style={{ fontSize: "20px", padding: "10px 0px" }}>iPhone 15 Pro - Thiết kế nhỏ gọn cùng hiệu năng mạnh mẽ</h1>
                         <p style={{ fontWeight: "400", fontSize: "15px", padding: "10px 0px" }}> <a href="" style={{ color: "#278aec" }}>iPhone 15 Pro</a> là bước tiến mới trong thế hệ smartphone của Apple, sở hữu nhiều cải tiến đáng kể so với các phiên bản trước. Được trang bị camera tiên tiến, hiệu suất mạnh mẽ từ chip A17 Pro cùng tính năng bảo mật cao cấp và hệ điều hành iOS 17 tối ưu. Hơn nữa, sản phẩm này được thiết kế đẹp mắt và sang trọng. Đây không chỉ là một chiếc điện thoại thông minh mà còn là biểu tượng của sự tiên tiến và đẳng cấp.</p>
-                        <img style={{ width: "750px", borderRadius: "12px" }} src="https://clickbuy.com.vn/uploads/images/tin%20tuc/Quanh/iphone-15-pro-1.jpg" alt="" />
+                        <img style={{ width: "750px", borderRadius: "12px" }} src={productDetail?.img} alt="" />
                     </div>
 
 
                     <div className={styles["parameter-rigth"]}>
                         <h1 style={{ fontSize: "16px" }}>Thông số kỹ thuật iPhone 15 Pro 128GB VN/A - Tặng BH rơi vỡ vào nước</h1>
-                        <img style={{ width: "347px" }} src="https://clickbuy.com.vn/uploads/images/2023/09/iphone-15-pro-max-titan-1.png" alt="" />
+                        <img style={{ width: "347px" }} src={productDetail?.img} alt="" />
                         <div className={styles["parameter-rigth-infor"]}>
                             <tr>
                                 <th style={{padding:"12px 10px"}}>Hệ điều hành</th>

@@ -99,7 +99,7 @@ export const Homepage = () => {
                         return (
                             <div className={styles['items_product']}
                                 key={items.id}>
-                                <a href="">
+                                <a href={`http://localhost:5173/Detail/${items._id}`}>
                                     <div className={styles["img-items_product"]}>
                                         <img src={items.img} alt="" />
                                     </div>
@@ -146,7 +146,7 @@ export const Homepage = () => {
                     {product.filter(product => product.category === "old" && product.current === "phone").slice(0, 5).map((items) => {
                         return (
                             <div className={styles['items_product']}>
-                                <a href="">
+                                <a href={`http://localhost:5173/Detail/${items._id}`}>
                                     <div className={styles["img-items_product"]}>
                                         <img src={items.img} alt="" />
                                     </div>
@@ -195,7 +195,7 @@ export const Homepage = () => {
                     {product.filter(product => product.category === "new" && product.type === "iPhone" && product.current === "phone").slice(0, 5).map((items) => {
                         return (
                             <div className={styles['items_product']}>
-                                <a href="">
+                                <a href={`http://localhost:5173/Detail/${items._id}`}>
                                     <div className={styles["img-items_product"]}>
                                         <img src={items.img} alt="" />
                                     </div>
@@ -249,7 +249,7 @@ export const Homepage = () => {
                     {product.filter(product => product.category === "new" && product.type === "Samsung").slice(0, 5).map((items) => {
                         return (
                             <div className={styles['items_product']}>
-                                <a href="">
+                                <a href={`http://localhost:5173/Detail/${items._id}`}>
                                     <div className={styles["img-items_product"]}>
                                         <img src={items.img} alt="" />
                                     </div>
@@ -295,7 +295,7 @@ export const Homepage = () => {
                     {product.filter(product => product.current === "table").slice(0, 5).map((items) => {
                         return (
                             <div className={styles['items_product']}>
-                                <a href="">
+                                <a href={`http://localhost:5173/Detail/${items._id}`}>
                                     <div className={styles["img-items_product"]}>
                                         <img src={items.img} alt="" />
                                     </div>
@@ -343,7 +343,7 @@ export const Homepage = () => {
                     {product.filter(product => product.current === "dongho").slice(0, 5).map((items) => {
                         return (
                             <div className={styles['items_product']}>
-                                <a href="">
+                                <a href={`http://localhost:5173/Detail/${items._id}`}>
                                     <div className={styles["img-items_product"]}>
                                         <img src={items.img} alt="" />
                                     </div>
@@ -388,7 +388,7 @@ export const Homepage = () => {
                     {product.filter(product => product.current === "phukien" ).slice(0, 5).map((items) => {
                         return (
                             <div className={styles['items_product']}>
-                                <a href="">
+                                <a href={`http://localhost:5173/Detail/${items._id}`}>
                                     <div className={styles["img-items_product"]}>
                                         <img src={items.img} alt="" />
                                     </div>
